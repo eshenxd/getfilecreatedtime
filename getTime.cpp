@@ -19,13 +19,13 @@ void GETTIME::getTime(string filename){
 
 	struct   tm*   t=localtime(&statbuf.st_ctime); 
 
-	year=t->tm_year+1900;
-	month=t->tm_mon+1;
-	day=t->tm_mday;
+	fyear=t->tm_year+1900;
+	fmonth=t->tm_mon+1;
+	fday=t->tm_mday;
 
-	hour=t->tm_hour;
-	minute=t->tm_min;
-	second=t->tm_sec;
+	fhour=t->tm_hour;
+	fminute=t->tm_min;
+	fsecond=t->tm_sec;
 }
 
 void GETTIME::getTime(){
@@ -38,25 +38,25 @@ void GETTIME::getTime(){
 
 	tm=localtime(static_cast<const time_t*>(&now));
 
-	year=tm->tm_year+1900;
-	month=tm->tm_mon+1;
-	day=tm->tm_mday;
+	lyear=tm->tm_year+1900;
+	lmonth=tm->tm_mon+1;
+	lday=tm->tm_mday;
 
-	hour=tm->tm_hour;
-	minute=tm->tm_min;
-	second=tm->tm_sec;
+	lhour=tm->tm_hour;
+	lminute=tm->tm_min;
+	lsecond=tm->tm_sec;
 }
 
 
-int main()
-{
-	GETTIME ftime,ltime;
-
-	string filename="d:/test.txt";
-
-	ftime.getTime(filename);
-
-	ltime.getTime();
-
-	return 0;
-}
+//int main()
+//{
+//	GETTIME ftime,ltime;
+//
+//	string filename="d:/test.txt";
+//
+//	ftime.getTime(filename);
+//
+//	ftime.getTime();
+//
+//	return 0;
+//}
